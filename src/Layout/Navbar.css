@@ -1,0 +1,19 @@
+.nav-container{
+    flex-direction: column !important;
+}
+.text{
+    margin: 4px;
+}
+.threeline-icon{
+    position: absolute;
+    right: 7px;
+    top: 10px;
+}
+@media (max-width:425px) {
+    .text {
+      display: none;
+    }
+    .sidebar-text{
+        width: 10% !important;
+    }
+  }
