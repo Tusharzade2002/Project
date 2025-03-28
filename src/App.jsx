@@ -1,6 +1,6 @@
 
 import './App.css'
-import Navbar1 from './Layout/Navbar'
+import Slidbar from './Layout/Sliderbar'
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-     <Navbar1/>
+      <Slidbar/>
     </>
   )
 }
