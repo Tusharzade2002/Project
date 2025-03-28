@@ -18,7 +18,7 @@ function Slidbar() {
       <div
         className="Desktop-view"
         style={{
-          width: "20%",
+          width: "13rem",
           backgroundColor: "black",
           color: "white",
           height: "100vh",
@@ -32,22 +32,20 @@ function Slidbar() {
         </div>
 
         <div className="ms-3 mt-4">
-          <div className="d-flex align-items-center my-3">
-            
-            <FaHome className="me-3"/> DashBoard
-          </div>
-          <div className="d-flex align-items-center my-3">
-            
+
+         <Link> <div className="d-flex align-items-center my-3">
+             <FaHome className="me-3"/> DashBoard
+          </div></Link>
+
+          <Link><div className="d-flex align-items-center my-3">
             <MdOutlineProductionQuantityLimits className="me-3"/> Products
-          </div>
-          <div className="d-flex align-items-center my-3">
-            
+          </div></Link>
+        <Link>  <div className="d-flex align-items-center my-3">
             <MdAddCard className="me-3"/>Blogs
-          </div>
-          <div className="d-flex align-items-center my-3">
-            
+          </div></Link>
+          <Link><div className="d-flex align-items-center my-3">
             <FaUser className="me-3"/> User
-          </div>
+          </div></Link>
         </div>
       </div>
       {/* mobile virew code */}
