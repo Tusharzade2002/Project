@@ -1,0 +1,9 @@
+.trucate{
+    line-height: 1.2em;
+    height: 3.6em;
+    width: 200px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:3;
+}

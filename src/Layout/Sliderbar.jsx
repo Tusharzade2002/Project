@@ -16,13 +16,15 @@ function Slidbar() {
 
   return (
     <>
+    {/* // Desktop view code */}
       <div
         className="Desktop-view"
         style={{
           width: "12rem",
           backgroundColor: "#333333",
           color: "white",
-          zIndex:"999"
+          zIndex:"999",
+        
         }}
       >
         <div className="d-flex justify-content-around pt-4">
@@ -59,7 +61,7 @@ function Slidbar() {
           </Link>
         </div>
       </div>
-      {/* mobile virew code */}
+      {/* mobile view code */}
 
       <button
         className="mobile-toggle"
