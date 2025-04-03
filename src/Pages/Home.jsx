@@ -3,7 +3,7 @@ import './Home.css'
 
 function Home() {
   return (
-    <>
+<>
     <div className='container' >
        <div className="items" style={{backgroundColor:"#1a53ff"}}>
             <div className='m-4'style={{color:"white"}}>
@@ -36,7 +36,7 @@ function Home() {
     </div>
  
         
-        </>
+</>
   )
 }
 

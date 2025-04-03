@@ -1,28 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import Badge from 'react-bootstrap/Badge';
 import star from '../assets/star.png'
-
-import axios from "axios"
 import "./product.css"
-function Product() {
-      const [Product,setProduct]=useState([])
-         const loadData=async()=>{
-            const Response =await axios.get("https://dummyjson.com/products")
-            const maindata=Response.data.products
-            setProduct(maindata);
-            console.log(maindata)
-            // useState(maindata)
-         }
-         useEffect(()=>{
-            loadData()   
-         },[])
-   
+import { getproducts } from '../Store/Product/productThunk';
+import { useDispatch, useSelector } from 'react-redux';
+
+
+
+function Products() {
+       
+      const dispatch = useDispatch()
+   const {products,status,error} = useSelector((state) => state.product); 
+ // Check if it's undefined
+
+       useEffect(()=>{
+         dispatch(getproducts());
+       },[dispatch])
+
 
   return (
-    <div className='d-flex flex-row justify-content-center flex-wrap'  >
-         {
-            Product.map((item,index)=>{
+    <div className='d-flex flex-row justify-content-center flex-wrap width: calc(100% - 30px);'>
+      
+      {status === "loading" && <p>Loading...</p>}
+      {status ==="failed" && <p>Error:{error}</p>}
+      {status === "succeeded" && 
+            products.map((item,index)=>{
                 return(
 
                     <div className='m-4 ' style={{width:"207px",height:"350px"}}> 
@@ -56,4 +59,4 @@ function Product() {
   )
 }
 
-export default Product
+export default Products

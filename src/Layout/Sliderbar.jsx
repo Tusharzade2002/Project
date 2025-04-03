@@ -24,7 +24,6 @@ function Slidbar() {
           backgroundColor: "#333333",
           color: "white",
           zIndex:"999",
-        
         }}
       >
         <div className="d-flex justify-content-around pt-4">
