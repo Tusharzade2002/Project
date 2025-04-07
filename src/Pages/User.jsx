@@ -17,13 +17,6 @@ function User () {
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(8);
 
-    const dispatch = useDispatch()
-   const {user,status,error} = useSelector((state) => state.user); 
- // Check if it's undefined
-
-       useEffect(()=>{
-         dispatch(getuser());
-       },[dispatch])
 
 
     const lastPostIndex = currentPage * postPerPage;
