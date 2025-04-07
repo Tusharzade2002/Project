@@ -17,6 +17,13 @@ function User () {
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(8);
 
+    const dispatch = useDispatch()
+   const {user,status,error} = useSelector((state) => state.user); 
+ // Check if it's undefined
+
+       useEffect(()=>{
+         dispatch(getuser());
+       },[dispatch])
 
 
     const lastPostIndex = currentPage * postPerPage;
@@ -30,7 +37,7 @@ function User () {
     return (
         
            
-           <div className='w-[100vw]'>
+           <div className=''>
                 <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mt-4 mb-3">
                     <h4>Users</h4>
                     <button className="btn btn-dark mt-2 mt-md-0">+ New User</button>
@@ -73,18 +80,21 @@ function User () {
                                         <th>Company</th>
                                         <th>Role</th>
                                         <th>Verified</th>
-                                        <th>Gender</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {loading ? (
+                                    {status=== "loading"? (
                                         <tr>
                                             <td colSpan="6" className="text-center">Loading...</td>
                                         </tr>
-                                    ) : (
-                                       
-                                        currentPosts.map((user) => (
+                                    ) :   status ==="failed" ?
+                                    (
+                                        <tr>
+                                        <td colSpan="6" className="text-center">{error}</td>
+                                    </tr>):(
+                                     
+                                        user.map((user) => (
                                             <tr key={user.id}>
                                                 <td>{user.firstName} {user.lastName}</td>
                                                 <td>{user.company?.name}</td>

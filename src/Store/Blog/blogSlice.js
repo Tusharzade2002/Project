@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getuser } from "./userthunk";
+import { getblogs } from "./blogThunk";
 
  const initialState={
-    user:[],
+    posts:[],
     status:"loading",
     error:null,
     filter:{}
  };
 
-const userSlice=createSlice({
-    name:"user",
+const blogSlice=createSlice({
+    name:"blog",
     initialState,
     reducers:{
     setFilter: (state, action) => {
@@ -17,18 +17,18 @@ const userSlice=createSlice({
       },
     },
     extraReducers:(builder)=>{
-        builder.addCase(getuser.pending,(state)=>{
+        builder.addCase(getblogs.pending,(state)=>{
             state.status = "loading";
         })
-        .addCase(getuser.fulfilled,(state,action)=>{
+        .addCase(getblogs.fulfilled,(state,action)=>{
             state.status="succeeded";
-            state.user=action.payload;
+            state.posts=action.payload;
         })
-        .addCase(getuser.rejected,(state,action)=>{
+        .addCase(getblogs.rejected,(state,action)=>{
             state.status="failed",
             state.error =action.error.message;
         })
     }
 })
-export const  {setFilter}=userSlice.actions;
-export default userSlice.reducer;
+export const  {setFilter}=blogSlice.actions;
+export default blogSlice.reducer;

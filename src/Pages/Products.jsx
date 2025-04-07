@@ -20,13 +20,13 @@ function Products() {
 
 
   return (
-    <div className='d-flex flex-row justify-content-center flex-wrap width: calc(100% - 30px);'>
+    <div className='d-flex flex-row justify-content-center flex-wrap '>
       {status === "loading" && <p>Loading...</p>}
       {status ==="failed" && <p>Error:{error}</p>}
       {status === "succeeded" && 
             products.map((item,index)=>{
                 return(
-                    <div className='m-4 ' style={{width:"207px",height:"350px"}}> 
+                    <div className='m-3 ' style={{width:"207px",height:"350px"}}> 
                     <Card  className='shadow-sm border border-0' style={{position:"relative"}}>
                     <Card.Img variant="top" style={{width:"100%"}} src={item.images} />
                     <Badge style={{position:"absolute",top:"10px" ,right:"10px",color:"white"}} 
