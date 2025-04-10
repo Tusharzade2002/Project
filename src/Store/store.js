@@ -1,16 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import productReducer from '../Store/Product/productSlice';
-import  userReducer  from '../Store/User/userSlice';
-import  blogReducer from '../Store/Blog/blogSlice';
-import postReducer from '../Store/Post/postSlice'
+import productReducer from './Product/productSlice.js';
+import  userReducer  from './User/userSlice.js'
+import blogReducer from './Blog/blogSlice.js';
+
 
 
 const store = configureStore({
   reducer: {
     product: productReducer,
     user:userReducer,
-    blog : blogReducer,
-    posts: postReducer,
+    blog:blogReducer,
   },
 });
 

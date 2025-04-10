@@ -1,10 +1,22 @@
 import React from "react";
 import "./Home.css";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import createPost from "../Store/Post/postThunk.js";
+// import { useState } from "react";
+// import { useDispatch, useSelector } from "react-redux";
+// import createPost from "../Store/Post/postThunk.js";
 function Home() {
+//   const dispatch = useDispatch();
+//   const { loading, post, error } = useSelector((state) => state.posts);
+//   const [formData, setFormData] = useState({
+//     title: "",
+//     body: "",
+//   });
 
+//   console.log(formData);
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     dispatch(createPost(formData));
+//   };
   return (
     <>
       <div className="container">
@@ -40,7 +52,37 @@ function Home() {
         </div>
       </div>
 
-      
+      {/* <div className="p-4">
+        <form onSubmit={handleSubmit}>
+          <input
+            value={formData.title}
+            name="title"
+            onChange={(e) =>
+              setFormData({ ...formData, [e.target.name]: e.target.value })
+            }
+            placeholder="Enter title"
+            className="border p-2 mr-2"
+          />
+
+          <input
+            value={formData.body}
+            name="body"
+            onChange={(e) =>
+              setFormData({ ...formData, [e.target.name]: e.target.value })
+            }
+            placeholder="Enter body"
+            className="border p-2 mr-2"
+          />
+
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2">
+            Submit
+          </button>
+        </form>
+
+        {loading && <p>Sending...</p>}
+        {post && <p>✅ Post sent: {post.title}</p>}
+        {error && <p className="text-red-500">❌ {error}</p>}
+      </div> */}
     </>
   );
 }
